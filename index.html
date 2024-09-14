@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姚文奡的简历</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #001f7f;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        nav ul li a:hover {
+            border-bottom: 2px solid #001f7f;
+            font-weight: bold;
+        }
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        #home { background: url('1.4.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh; /* 设置高度为视口高度 */
+            weight: 85%;
+            align-items: left;
+            justify-content: left;
+            color: white; /* 可根据需要设置文本颜色 */
+            text-align: left; 
+        }
+        #experience {
+            display: flex;
+            min-height: 60vh; /* 可根据需要调整高度 */
+            background-color: white;
+            padding: 20px;
+        }
+
+        /* 左侧边栏样式 */
+        .left-sidebar {
+            background: url('3.1.png') no-repeat center center;
+            background-size: cover;
+            flex: 0 0 470px; /* 固定宽度的侧边栏 */
+            height: 100vh;
+            background-color: white;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box; /* 确保padding不会影响总宽度 */
+        }
+
+        /* 主内容样式 */
+        .main-content {
+            flex: 1; /* 占据剩余空间 */
+            padding: 20px;
+            background-color:white;
+            box-sizing: border-box;
+            min-height: 100vh
+        }
+        .wrap{
+            width: 950px;
+            position: relative;
+            top: 60px;
+            color: white;
+        }
+        .wrap::after{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 9%;
+            width: 5px;
+            z-index: 1;
+            height: 500px;
+            background-color: rgba(0, 150, 250, 1);
+        }
+        .box{
+            position: relative;
+            width: 100%;
+            height: 80px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+        .left {
+            position: relative;
+            width: 2%; /* 调整左边区域的宽度 */
+            height: 80px;
+            border-radius: 15px;
+            text-align: center;
+            color: gray;
+            background-color: white;
+            z-index: 1;
+        }
+
+        .right {
+            position: relative;
+            width: 85%; /* 扩大右边区域的宽度 */
+            height: 100px;
+            border-radius: 15px;
+            text-align: left;
+            color: white;
+            padding: 10px;
+            background-color:rgba(0, 150, 250, 1);
+            z-index: 2;
+        }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 1%; /* 移除 <h3> 标签底部的空白 */
+        }
+
+        .center{
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center>span{
+            width: 120px;
+            border-radius: 10px;
+            text-align: center;
+            font: 900 24px '';
+            line-height: 50px;
+            background-color: rgba(0, 150, 250, 1);
+        }
+        
+        #skills {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items:start;
+            height: 100vh;
+        }
+        .skills-section {
+            text-align: center;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .skill {
+            width: 600px;
+            margin: 10px 20px;
+        }
+
+        .skill p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 18px;
+            border-radius: 20px;
+        }
+
+        .python {
+            width: 92%;
+            background-color: darkblue;
+        }
+
+        .c {
+            width: 85%;
+            background-color: darkblue;
+        }
+        .bigdata{
+            width: 80%;
+            background-color: rgba(0, 0, 200, 1);
+        }
+        .java{
+            width: 75%;
+            background-color: rgba(0, 0, 200, 1);
+        }
+        .postgresql{
+            width: 80%;
+            background-color: rgba(0, 0, 200, 1);
+        }
+        .font{
+            width: 75%;
+            background-color: rgba(0, 0, 250, 1);
+        }
+        .API{
+            width: 70%;
+            background-color: rgba(0, 100, 250, 1);
+        }
+        .shell{
+            width: 65%;
+            background-color: rgba(0, 100, 250, 1);
+        }
+        .cplus{
+            width: 65%;
+            background-color: rgba(0, 100, 250, 1);
+        }
+        .R{
+            width: 85%;
+            background-color: darkblue;
+        }
+        .rust{
+            width: 65%;
+            background-color: rgba(0, 100, 250, 1);
+        }
+        .adobe{
+            width: 85%;
+            background-color: darkblue;
+        }
+            /* #my-work { background-color: #b3b3b3; } */
+        #about-me {
+            background-color: rgba(10,200,250,0.1); 
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        /* 设置卡片样式 */
+        .card {
+            width: 470px;
+            height: 265px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease; /* 设置变换动画 */
+            cursor: pointer;
+        }
+
+          /* 鼠标悬停时卡片变大 */
+          .card:hover {
+            transform: scale(1.05); /* 卡片放大 */
+        }
+
+        /* 设置卡片内容样式 */
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card h3 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .card p {
+            text-align: left;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 弹出层样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* 弹出层中的卡片样式 */
+        .modal-content {
+            margin: 5% auto;
+            width: 1150px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-height: 80vh;  /* 设置最大高度为视口高度的80% */
+            overflow-y: auto;  /* 当内容超出时，允许纵向滚动 */
+        }
+
+        /* 关闭按钮样式 */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+
+        #contact{
+            font-family: Arial, sans-serif;
+            background-color: #3f51b5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-right: 0px;
+            width: 1000px;
+            height: 700px;
+            
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            flex-direction: column; /* 让表单内容按列排列 */
+        }
+
+        .contact-form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 75%;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 70%;
+        }
+        #message {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 75%; /* 可以根据需要调整 */
+            height: 200px; /* 可以根据需要调整 */
+            resize: none; /* 禁止用户拖动调整大小 */
+        }
+        .contact-card {
+            width: 500px;
+            height: 700px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            padding: 30px;
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease;
+        }
+
+        .card-front {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .profile-photo {
+            width: 60%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .card-back {
+            opacity: 0;
+            background-color: #000;
+        }
+
+        .card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-card:hover .card-front {
+            opacity: 0;
+        }
+
+        .contact-card:hover .card-back {
+            opacity: 1;
+        }
+        
+        .resume-button {
+            background-color: #3f51b5; /* 绿色背景 */
+            color: white; /* 白色文字 */
+            padding: 10px 20px; /* 内边距 */
+            border: none; /* 无边框 */
+            border-radius: 4px; /* 圆角 */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            position: fixed; /* 绝对定位 */
+            bottom: 20px; /* 距离底部20px */
+            right: 25px; /* 距离右侧20px */
+            cursor: pointer; /* 鼠标悬停样式 */
+        }
+
+        .resume-button:hover {
+            background-color: darkblue; /* 悬停时背景颜色变深 */
+        }
+
+        .dot-navigation {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dot-navigation .dot {
+            width: 10px;
+            height: 10px;
+            margin: 10px 0;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dot-navigation .dot.active {
+            background-color: #001f7f;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">home</a></li>
+            <li><a href="#experience">experience</a></li>
+            <li><a href="#skills">skills</a></li>
+            <!-- <li><a href="#my-work">my work</a></li> -->
+            <li><a href="#about-me">about me</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="dot-navigation">
+        <div class="dot" data-target="#home"></div>
+        <div class="dot" data-target="#experience"></div>
+        <div class="dot" data-target="#skills"></div>
+        <!-- <div class="dot" data-target="#my-work"></div> -->
+        <div class="dot" data-target="#about-me"></div>
+        <div class="dot" data-target="#contact"></div>
+    </div>
+
+    <section id="home">
+        <!-- <h1>Home</h1>
+        <p>这是首页部分的内容。</p> -->
+    </section>
+
+    <section id="experience">
+        <div class="left-sidebar">
+            
+        </div>
+        <div class="main-content">
+            <div class="wrap">
+                <div class="box">
+                    <div class = "left"></div>
+                    <div class = "center"><span>
+                        2017.09
+                    </span></div>
+                    <div class = "right">
+                        <h3>山西大学 统计学</h3>
+                        <p>对应用统计有浓厚的兴趣（多元统计91分、时间序列81分、实用回归86分）</p>
+                    </div>
+                </div>
+            
+                <div class="box">
+                    <div class = "left"></div>
+                    <div class = "center"><span>
+                        2021.07
+                    </span></div>
+                    <div class = "right">
+                        <h3>中国建设银行股份有限公司 柜员</h3>
+                        <p>负责日常现金类业务处理及个人零售业务的服务及沟通、辅助业务营销及业务处理工作，以及对公业务如单位结算账户管理工作，包括对公开销户、账户年
+                            检与变更、存款证明与询证函业务、账户内外部控制、不动户与久悬户管
+                            理等工作</p>
+                    </div>
+                </div>
+            
+                <div class="box">
+                    <div class = "left"></div>
+                    <div class = "center"><span>
+                        2022.04
+                    </span></div>
+                    <div class = "right">
+                        <h3>备战考研</h3>
+                        <p>系统梳理了高等数学、线性代数、概率论等数学基础知识，并深入整理了应用统计学的关键知识点，进一步加深了对统计学的整体框架和核心概念的理解。
+                            在思想政治理论方面，积极学习马原、毛中特及中国近现代史纲要，树立了正确的政治立场和价值观。
+                            同时，还自主学习了Python和C语言，持续提升编程能力和技术水平。</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class = "left"></div>
+                    <div class = "center"><span>
+                       2023.03
+                    </span></div>
+                    <div class = "right">
+                        <h3>准备留学</h3>
+                        <p>积极备战雅思考试，通过系统背诵词汇、定期收听英语新闻、阅读长篇英文论文，来全面提升英语听力与阅读能力。
+                            同时，我注重自主训练英语口语，提升语言表达的流利度和准确性，以实现全面的语言技能提升。</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class = "left"></div>
+                    <div class = "center"><span>
+                        2023.09
+                    </span></div>
+                    <div class = "right">
+                        <h3>新南威尔士大学 计算机科学与技术</h3>
+                        <p>深入学习了各种汇编语言 实际操作了数据库管理、集群部署、数据分析及机器学习等，对应用统计和计算机项目编写有了全新的认识</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    
+
+    <section id="skills">
+        <div class="skills-section" >
+            <h2>SKILLS</h2>
+            <div class="skills">
+                <div class="skill">
+                    <p>Python</p>
+                    <div class="progress-bar">
+                        <div class="progress python"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <p>C Programming Language</p>
+                    <div class="progress-bar">
+                        <div class="progress c"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <p>PostgreSQL</p>
+                    <div class="progress-bar">
+                        <div class="progress postgresql"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <p>Hadoop MapReduce Spark (RDD,DataFrame) </p>
+                    <div class="progress-bar">
+                        <div class="progress bigdata"></div>
+                    </div>
+                </div>
+
+
+                <div class="skill">
+                    <p>Java</p>
+                    <div class="progress-bar">
+                        <div class="progress java"></div>
+                    </div>
+                </div>
+                
+                
+
+                <div class="skill">
+                    <p>HTML CSS JavaScript React</p>
+                    <div class="progress-bar">
+                        <div class="progress font"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <p>Flask, Restful API </p>
+                    <div class="progress-bar">
+                        <div class="progress API"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <p>Shell </p>
+                    <div class="progress-bar">
+                        <div class="progress shell"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <p>Rust</p>
+                    <div class="progress-bar">
+                        <div class="progress rust"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <p>C++ </p>
+                    <div class="progress-bar">
+                        <div class="progress cplus"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <p>R Programming Language</p>
+                    <div class="progress-bar">
+                        <div class="progress R"></div>
+                    </div>
+                </div>
+
+                
+                <div class="skill">
+                    <p>Photoshop, Premiere Pro, illustrator</p>
+                    <div class="progress-bar">
+                        <div class="progress adobe"></div>
+                    </div>
+                </div>
+
+
+                
+
+
+                
+    </section>
+
+    <!-- <section id="my-work">
+        <h1>My Work</h1>
+        <p>这是我的工作部分的内容。</p>
+    </section> -->
+
+    <section id="about-me">
+        <h1>About me</h1>
+        <div class="container">
+            <!-- 卡片 -->
+            <div class="card" onclick="openModal('english.jpg',  '高考英语130分，大一下学期和大二上学期就一次性通过了四六级，第二次参加雅思考试就通过了研究生入学要求（6.5分）')">
+                <!-- <h3>卡片标题1</h3> -->
+                <img src="20230828-171748.jpg" alt="图片1">
+                <!-- <p>这是卡片1的描述文字。</p> -->
+            </div>
+            <div class="card" onclick="openModal('database.png', '在数据库系统和大数据管理相关课程中均取得了优异成绩，深入掌握了数据库管理、数据存储及处理技术，对集群部署与大规模数据管理有了系统性和前瞻性的认识，具备了扎实的理论基础和实践经验。', )">
+                <!-- <h3>卡片标题2</h3> -->
+                <img src="OIP.jpg" alt="图片2">
+                <!-- <p>这是卡片2的描述文字。</p> -->
+            </div>
+            <div class="card" onclick="openModal('9444.jpg', '在团队项目中深入理解并实际操作扩散模型的机制生成图片，我负责的是开发一个无监督学习的扩散模型，该模型能够在没有标签数据的情况下学习生成新的汽车图像，涉及非平衡热力学的深度无监督学习方法，以及使用马尔可夫链和去噪自编码器的去噪扩散概率模型，实现高质量的图像生成效果。')">
+                <!-- <h3>卡片标题3</h3> -->
+                <img src="diffusion.png" alt="图片3">
+                <!-- <p>这是卡片3的描述文字。</p> -->
+            </div>
+            <div class="card" onclick="openModal('statistic.jpg', '具备扎实的数学基础，能够熟练运用Python、R语言及SPSS等统计软件，构建时间序列预测模型、回归分析模型及相关性分析模型，具备较强的数据分析与建模能力，能够有效解决复杂的数据问题。')">
+                <!-- <h3>卡片标题4</h3> -->
+                <img src="corr.png" alt="图片4">
+                <!-- <p>这是卡片4的描述文字。</p> -->
+            </div>
+            <div class="card" onclick="openModal('photoset.png', '摄影爱好者，熟练掌握图像视频等后期处理技术。大学期间是社团的核心骨干，主要负责现场摄影摄像、宣传视频剪辑、设计宣传海报、精修公众号图片及帮助维护社团公众号运营，长期为社团成员及大学同学提供摄影摄像及后期处理服务' )">
+                <!-- <h3>卡片标题5</h3> -->
+                <img src="photo.png" alt="图片5">
+                <!-- <p>这是卡片5的描述文字。</p> -->
+            </div>
+            <div class="card" onclick="openModal('卧推.png', '游泳爱好者 骑行爱好者 杠铃卧推80kg挑战成功者 100kg挑战者')">
+                <!-- <h3>卡片标题6</h3> -->
+                <img src="sport.png" alt="图片6">
+                <!-- <p>这是卡片6的描述文字。</p> -->
+            </div>
+        </div>
+    
+        <!-- 弹出层 -->
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="弹出图片">
+                <h3 id="modalTitle">弹出标题</h3>
+                <p id="modalText">弹出文字描述</p>
+            </div>
+        </div>
+    
+        <script>
+            // 打开弹出层并显示相应的卡片内容
+            function openModal(imagePath, title, text) {
+                var modal = document.getElementById("myModal");
+                var modalImg = document.getElementById("modalImage");
+                var modalTitle = document.getElementById("modalTitle");
+                var modalText = document.getElementById("modalText");
+
+                modal.style.display = "block";
+                modalImg.src = imagePath;  // 直接使用传入的图片路径
+                modalTitle.textContent = title;
+                modalText.textContent = text;
+            }
+    
+            // 关闭弹出层
+            function closeModal() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+        </script>
+    </section>
+
+    <section id="contact">
+        <div class="contact-card">
+            <!-- 卡片默认内容 -->
+            <div class="card-front">
+                <img src="profile.jpg" alt="个人证件照" class="profile-photo">
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <p>电话：19935100505</p>
+                    <p>邮箱：780628699@qq.com</p>
+                    <p>微信/qq: 780628699</p>
+                </div>
+            </div>
+            
+            
+
+            <!-- 卡片悬停后显示的图片 -->
+            <div class="card-back">
+                <img src="wechat.jpg" alt="新图片" class="new-photo">
+            </div>
+        </div>
+
+      
+    
+        <script src="scripts.js"></script>
+
+      
+      
+        <div class="contact-form">
+            <!-- 你现有的表单 -->
+            <h2>联系方式</h2>
+            <p> </p>
+            <form action="https://formspree.io/f/mdknjvew" method="POST">
+                <label for="name">昵称</label>
+                <input type="text" id="name" name="name" placeholder="例：节字动跳人事小姚">
+            
+                <label for="email">邮箱</label>
+                <input type="email" id="email" name="email" placeholder="例：780628699@qq.com">
+            
+                <label for="message">联系内容</label>
+                <textarea id="message" name="message" placeholder="Input Message here"></textarea>
+            
+                <button type="submit"><h3>提交</h3></button>
+            </form>
+            
+            <a href="CV - 姚文奡 .pdf" target="_blank" class="resume-button">查看简历</a>
+        </div>
+            
+    </section>
+
+    <script>
+        // 处理点击右侧小点导航
+        document.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const targetSection = document.querySelector(this.getAttribute('data-target'));
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 监听滚动事件，更新小点导航的状态
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            let index = sections.length;
+
+            while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+            document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+            document.querySelectorAll('.dot')[index].classList.add('active');
+        });
+    </script>
+
+</body>
+</html>
